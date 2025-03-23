@@ -78,7 +78,7 @@ export default function EventsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Discover Events</h1>
+      <h1 className="text-3xl font-bold mt-12 mb-6">Discover Events</h1>
 
       {/* Search and Filter Bar */}
       <div className="flex flex-col md:flex-row gap-4 mb-8">

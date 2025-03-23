@@ -231,13 +231,13 @@ export default function MyStats() {
           transition={{ duration: 0.5 }}
         >
           <div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-[#00c3ff] to-[#0080ff] text-transparent bg-clip-text">
+            <h1 className="text-3xl mt-12 font-bold bg-gradient-to-r from-[#00c3ff] to-[#0080ff] text-transparent bg-clip-text">
               My Stats
             </h1>
-            <p className="text-gray-400">Track your engagement and fan activity across platforms</p>
+            <p className="text-gray-400 mt-1">Track your engagement and fan activity across platforms</p>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex mt-12 items-center gap-4">
             <Button variant="outline" className="border-[#00c3ff]/30 text-[#00c3ff] hover:bg-[#00c3ff]/10">
               <Calendar className="mr-2 h-4 w-4" />
               Last 30 Days

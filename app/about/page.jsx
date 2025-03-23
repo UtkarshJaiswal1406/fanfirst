@@ -11,38 +11,64 @@ export default function About() {
   const teamMembers = [
     {
       id: 1,
-      name: "Rahul Sharma",
-      role: "Founder & CEO",
+      name: "Utkarsh Jaiswal",
+      role: "Ful Stack Integration",
       image: "/placeholder.svg?height=200&width=200",
-      bio: "Former ticketing industry executive with 15+ years of experience. Passionate about creating fair access to events for true fans.",
     },
     {
       id: 2,
-      name: "Priya Patel",
-      role: "Chief Technology Officer",
+      name: "Krishna Keshab Banik",
+      role: "UI Designer",
       image: "/placeholder.svg?height=200&width=200",
-      bio: "AI and blockchain specialist with experience at leading tech companies. Leads the development of PriorityPass's core technology.",
     },
     {
       id: 3,
-      name: "Arjun Mehta",
-      role: "Head of Partnerships",
+      name: "Rashmika Das",
+      role: "ML Model Developer",
       image: "/placeholder.svg?height=200&width=200",
-      bio: "Former entertainment industry executive who manages relationships with event organizers, venues, and streaming platforms.",
     },
     {
       id: 4,
-      name: "Neha Gupta",
-      role: "Chief Marketing Officer",
+      name: "Yukta Bhardwaj",
+      role: "ML Model Developer",
       image: "/placeholder.svg?height=200&width=200",
-      bio: "Digital marketing expert who previously worked with major entertainment brands. Leads PriorityPass's growth and user acquisition.",
+    },
+    {
+      id: 5,
+      name: "Shaik Aftab",
+      role: "Web3 Developer",
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: 6,
+      name: "Saatvik SS",
+      role: "Full Stack Developer",
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: 7,
+      name: "Shaurya Kesarwani",
+      role: "Documentation",
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: 8,
+      name: "Sanskriti Rastogi",
+      role: "Documenatation",
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: 9,
+      name: "Sanjay Kumar Gupta",
+      role: "Documenatation",
+      image: "/placeholder.svg?height=200&width=200",
     },
   ]
 
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Hero Section */}
-      <section className="relative h-[400px] md:h-[500px] overflow-hidden rounded-xl mb-12">
+      <section className="relative h-[400px] top-12 md:h-[500px] overflow-hidden rounded-xl mb-12">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 to-black/80 z-10" />
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
