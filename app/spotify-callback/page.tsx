@@ -17,7 +17,7 @@ export default function SpotifyCallback() {
         if (!hash) {
           console.error('No hash fragment in URL');
           setError('Invalid callback URL. Please try again.');
-          setTimeout(() => router.push('/dashboard'), 2000);
+          setTimeout(() => router.push('/connected-accounts'), 2000);
           return;
         }
 
@@ -28,7 +28,7 @@ export default function SpotifyCallback() {
         if (error) {
           console.error('Spotify auth error:', error);
           setError('Authentication failed. Please try again.');
-          setTimeout(() => router.push('/dashboard'), 2000);
+          setTimeout(() => router.push('/connected-accounts'), 2000);
           return;
         }
 
@@ -37,7 +37,7 @@ export default function SpotifyCallback() {
         if (!accessToken) {
           console.error('No access token received');
           setError('No access token received. Please try again.');
-          setTimeout(() => router.push('/dashboard'), 2000);
+          setTimeout(() => router.push('/connected-accounts'), 2000);
           return;
         }
 
@@ -47,8 +47,8 @@ export default function SpotifyCallback() {
         // Clear any existing data
         localStorage.removeItem('spotify_data');
         
-        // Redirect to dashboard
-        router.push('/dashboard');
+        // Redirect to connected accounts
+        router.push('/connected-accounts');
       } catch (error) {
         console.error('Error handling Spotify callback:', error);
         setError('Something went wrong. Please try again.');

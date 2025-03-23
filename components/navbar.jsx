@@ -47,7 +47,6 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", path: "/", icon: <Home className="h-4 w-4 mr-2" />, id: "home" },
-    { name: "Dashboard", path: "/dashboard", icon: <LayoutDashboard className="h-4 w-4 mr-2" />, id: "dashboard" },
     { name: "Events", path: "/events", icon: <Calendar className="h-4 w-4 mr-2" />, id: "events" },
     { name: "My-Stats", path: "/my-stats", icon: <BarChart2 className="h-4 w-4 mr-2" />, id: "my-stats" },
     { name: "About", path: "/about", icon: <Info className="h-4 w-4 mr-2" />, id: "about" },
