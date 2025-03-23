@@ -81,57 +81,6 @@ export default function Footer() {
               </motion.a>
             </div>
           </div>
-
-          <div>
-            <h3 className="text-sm font-semibold mb-4 text-[#00c3ff]">Quick Links</h3>
-            <ul className="space-y-2">
-              {["Home", "Events", "Dashboard", "My-Stats", "About"].map((item) => (
-                <li key={item}>
-                  <Link
-                    href={`/${item.toLowerCase() === "home" ? "" : item.toLowerCase()}`}
-                    className="text-sm text-gray-400 hover:text-[#00c3ff] transition-colors"
-                    onClick={handleLinkClick}
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold mb-4 text-[#00c3ff]">Support</h3>
-            <ul className="space-y-2">
-              {["Help Center", "FAQs", "Contact Us", "Terms", "Privacy"].map((item) => (
-                <li key={item}>
-                  <Link
-                    href={`/${item.toLowerCase().replace(" ", "-")}`}
-                    className="text-sm text-gray-400 hover:text-[#00c3ff] transition-colors"
-                    onClick={handleLinkClick}
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold mb-4 text-[#00c3ff]">Legal</h3>
-            <ul className="space-y-2">
-              {["Terms of Service", "Privacy Policy", "Cookie Policy", "Refund Policy"].map((item) => (
-                <li key={item}>
-                  <Link
-                    href={`/${item.toLowerCase().replace(/ /g, "-")}`}
-                    className="text-sm text-gray-400 hover:text-[#00c3ff] transition-colors"
-                    onClick={handleLinkClick}
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         <div className="mt-8 pt-4 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">

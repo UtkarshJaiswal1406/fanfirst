@@ -58,7 +58,7 @@ export default function Dashboard() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mt-12 mb-8">Your Fan Dashboard</h1>
+      <h1 className="text-4xl font-bold mb-8">Your Fan Dashboard</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <Card className="p-6">

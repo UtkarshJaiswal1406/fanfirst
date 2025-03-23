@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import CursorEffect from "@/components/cursor-effect"
+// import CursorEffect from "@/components/cursor-effect"
 import { motion, AnimatePresence } from "framer-motion"
 
 interface ClientLayoutProps {
@@ -55,7 +55,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
             </motion.main>
           </AnimatePresence>
           <Footer />
-          <CursorEffect />
+          {/* <CursorEffect /> */}
         </div>
       </ThemeProvider>
     </div>

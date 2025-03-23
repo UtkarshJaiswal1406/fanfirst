@@ -32,46 +32,57 @@ export default function ParticlesBackground({ color = "#ffffff", variant }: Part
         background: {
           color: "#111827",
         },
-        fpsLimit: 120,
+        fpsLimit: 60,
         particles: {
           color: {
             value: color,
           },
           links: {
             color: color,
-            distance: 150,
+            distance: 120,
             enable: true,
             opacity: 0.5,
             width: 1,
           },
           collisions: {
-            enable: true,
+            enable: false,
           },
           move: {
             direction: "none",
             enable: true,
             outModes: {
-              default: "bounce",
+              default: "out",
             },
             random: false,
-            speed: 3,
-            straight: false,
+            speed: 1.5,
+            straight: true,
+            bounce: false,
+            attract: {
+              enable: false,
+            }
           },
           number: {
             density: {
               enable: true,
-              area: 800,
+              area: 900,
             },
-            value: 80,
+            value: 180,
+            limit: 180,
           },
           opacity: {
             value: 0.5,
+            animation: {
+              enable: false,
+            }
           },
           shape: {
             type: "circle",
           },
           size: {
             value: { min: 1, max: 5 },
+            animation: {
+              enable: false,
+            }
           },
         },
         interactivity: {
@@ -83,23 +94,24 @@ export default function ParticlesBackground({ color = "#ffffff", variant }: Part
             onHover: {
               enable: true,
               mode: "grab",
+              parallax: {
+                enable: false,
+              }
             },
-            resize: true,
+            resize: false,
           },
           modes: {
             push: {
-              quantity: 4,
+              quantity: 2,
+              limit: 4,
             },
             grab: {
-              distance: 200,
+              distance: 300,
               links: {
                 opacity: 0.7,
                 color: color,
+                blink: false,
               },
-            },
-            repulse: {
-              distance: 100,
-              duration: 0.4,
             },
           },
         },
