@@ -13,6 +13,7 @@ export default function SpotifyCallback() {
       try {
         // Get the hash fragment from the URL
         const hash = window.location.hash.substring(1);
+
         if (!hash) {
           console.error('No hash fragment in URL');
           setError('Invalid callback URL. Please try again.');
@@ -46,7 +47,7 @@ export default function SpotifyCallback() {
         // Clear any existing data
         localStorage.removeItem('spotify_data');
         
-        // Redirect back to dashboard
+        // Redirect to dashboard
         router.push('/dashboard');
       } catch (error) {
         console.error('Error handling Spotify callback:', error);
