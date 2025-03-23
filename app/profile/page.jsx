@@ -13,7 +13,7 @@ import ConnectedAccounts from "@/components/connected-accounts"
 export default function Profile() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Profile</h1>
+      <h1 className="text-3xl font-bold mt-12 mb-8">Profile</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <div className="md:col-span-1">
