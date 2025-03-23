@@ -12,8 +12,6 @@ import ParticlesBackground from "@/components/particles-background"
 import AnimatedText from "@/components/animated-text"
 import ParallaxSection from "@/components/parallax-section"
 import LiquidBlobBackground from "@/components/liquid-blob-background"
-import HolographicDisplay from "@/components/holographic-display"
-import FuturisticLogo from "@/components/futuristic-logo"
 import FuturisticCard from "@/components/futuristic-card"
 import ParticleBurst from "@/components/particle-burst"
 
@@ -86,11 +84,18 @@ export default function Home() {
       {/* Hero Section */}
       <section ref={heroRef} className="relative h-[100vh] overflow-hidden flex items-center">
         <div className="absolute inset-0 z-0">
+          <video ref={videoRef} autoPlay muted loop className="w-full h-full object-cover" style={{ opacity: 0.4 }}>
+            <source
+              src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-city-11748-large.mp4"
+              type="video/mp4"
+            />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black"></div>
         </div>
 
         <div className="absolute inset-0 z-10">
         </div>
+
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center">
           <motion.div
             className="max-w-3xl"
@@ -122,6 +127,8 @@ export default function Home() {
                   color="multi"
                 />
               </motion.div>
+
+              
             </div>
 
             <motion.div
@@ -506,7 +513,7 @@ export default function Home() {
           >
             <AnimatedText
               text="How FanFirst Works"
-              className="text-4xl top-6 font-bold text-center"
+              className="text-4xl font-bold text-center"
               effect="glitch"
               color="multi"
             />
