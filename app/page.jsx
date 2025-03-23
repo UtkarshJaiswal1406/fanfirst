@@ -12,6 +12,8 @@ import ParticlesBackground from "@/components/particles-background"
 import AnimatedText from "@/components/animated-text"
 import ParallaxSection from "@/components/parallax-section"
 import LiquidBlobBackground from "@/components/liquid-blob-background"
+import HolographicDisplay from "@/components/holographic-display"
+import FuturisticLogo from "@/components/futuristic-logo"
 import FuturisticCard from "@/components/futuristic-card"
 import ParticleBurst from "@/components/particle-burst"
 
@@ -96,6 +98,8 @@ export default function Home() {
         <div className="absolute inset-0 z-10">
         </div>
 
+        <LiquidBlobBackground className="absolute inset-0 z-5" blobCount={5} />
+
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center">
           <motion.div
             className="max-w-3xl"
@@ -112,6 +116,7 @@ export default function Home() {
                 transition={{ duration: 0.8, type: "spring" }}
                 className="relative"
               >
+                <FuturisticLogo size={80} />
                 <ParticleBurst
                   size={120}
                   particleCount={30}
@@ -328,7 +333,7 @@ export default function Home() {
             <AnimatedText
               text="Discover Events By Category"
               className="text-4xl font-bold text-center"
-              effect="fade"
+              effect="wave"
               color="multi"
             />
           </motion.div>

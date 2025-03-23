@@ -61,45 +61,7 @@ export default function Dashboard() {
       <h1 className="text-4xl font-bold mb-8">Your Fan Dashboard</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <Card className="p-6">
-          <div className="flex items-center gap-4 mb-4">
-            <Trophy className="w-8 h-8 text-primary" />
-            <div>
-              <h2 className="text-2xl font-semibold">Fan Score</h2>
-              <p className="text-muted-foreground">Your current fan engagement level</p>
-            </div>
-          </div>
-          <Progress value={fanScore} className="mb-2" />
-          <p className="text-right font-semibold">{fanScore}/100</p>
-        </Card>
-
-        <Card className="p-6">
-          <div className="flex items-center gap-4 mb-4">
-            <Star className="w-8 h-8 text-primary" />
-            <div>
-              <h2 className="text-2xl font-semibold">Priority Status</h2>
-              <p className="text-muted-foreground">
-                {fanScore >= 80 ? 'VIP Access' : 
-                 fanScore >= 60 ? 'Early Access' : 
-                 'Connect Spotify for Priority Access'}
-              </p>
-            </div>
-          </div>
-          <ul className="space-y-2">
-            <li className="flex items-center gap-2">
-              <BarChart2 className="w-4 h-4 text-green-500" />
-              Score above 80: VIP Access
-            </li>
-            <li className="flex items-center gap-2">
-              <BarChart2 className="w-4 h-4 text-blue-500" />
-              Score 60-79: Early Access
-            </li>
-            <li className="flex items-center gap-2">
-              <BarChart2 className="w-4 h-4 text-yellow-500" />
-              Score below 60: Standard Access
-            </li>
-          </ul>
-        </Card>
+        
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

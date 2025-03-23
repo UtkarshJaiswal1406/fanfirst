@@ -9,7 +9,7 @@ import EventCard from "@/components/event-card";
 import EventFilters from "@/components/event-filters";
 
 interface Event {
-  id: number;
+  _id: string; // MongoDB adds this field
   title: string;
   category: string;
   date: string;
@@ -26,6 +26,7 @@ export default function EventsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetchEvents();
@@ -33,13 +34,21 @@ export default function EventsPage() {
 
   const fetchEvents = async () => {
     try {
+      setLoading(true);
+      setError("");
+      console.log("Fetching events..."); // Debug log
       const response = await fetch("/api/events");
+      if (!response.ok) {
+        throw new Error('Failed to fetch events');
+      }
       const data = await response.json();
+      console.log("Received events:", data); // Debug log
       setAllEvents(data);
       setFilteredEvents(data);
-      setLoading(false);
     } catch (error) {
       console.error("Error fetching events:", error);
+      setError("Failed to load events. Please try again later.");
+    } finally {
       setLoading(false);
     }
   };
@@ -56,17 +65,32 @@ export default function EventsPage() {
 
   const applyFilters = async (search: string, category: string) => {
     try {
+      setLoading(true);
       const params = new URLSearchParams();
       if (search) params.append("search", search);
       if (category && category !== "all") params.append("category", category);
 
       const response = await fetch(`/api/events?${params.toString()}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch filtered events');
+      }
       const data = await response.json();
       setFilteredEvents(data);
     } catch (error) {
       console.error("Error applying filters:", error);
+      setError("Failed to apply filters. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
+
+  if (error) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center text-red-500">{error}</div>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
@@ -149,15 +173,23 @@ export default function EventsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
+              <EventCard key={event._id} event={event} />
             ))}
           </div>
 
-          <div className="mt-8 flex justify-center">
-            <Button variant="outline" className="border-gray-700">
-              Load More Events
-            </Button>
-          </div>
+          {filteredEvents.length === 0 && !loading && (
+            <div className="text-center text-gray-500 mt-8">
+              No events found. Try adjusting your filters.
+            </div>
+          )}
+
+          {filteredEvents.length > 0 && (
+            <div className="mt-8 flex justify-center">
+              <Button variant="outline" className="border-gray-700">
+                Load More Events
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </div>

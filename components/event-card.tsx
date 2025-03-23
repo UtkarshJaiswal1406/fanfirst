@@ -7,7 +7,7 @@ import { Calendar, MapPin, Star } from "lucide-react";
 
 interface EventCardProps {
   event: {
-    id: number;
+    _id: string;
     title: string;
     category: string;
     date: string;
